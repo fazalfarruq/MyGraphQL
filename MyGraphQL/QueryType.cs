@@ -11,6 +11,7 @@ namespace MyGraphQL
         protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
         {
             descriptor.Field(_ => _.GetCharacters(default))
+                .Type<ListType<CharacterType>>()
                 .Name("AllCharacters");
             descriptor.Field(_ => _.GetCharacterByIdAsync(default, default, default))
                 .Type<ListType<CharacterType>>()
