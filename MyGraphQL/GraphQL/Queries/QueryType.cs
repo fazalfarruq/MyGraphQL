@@ -14,10 +14,12 @@ namespace MyGraphQL
             descriptor.Name("Query");
             descriptor.Field("GetCharacters")
                 .ResolveWith<CharacterResolver>(q => q.GetCharacters(default))
+                .Type<ListType<CharacterType>>()
                 .Name("AllTheCharacters");
 
             descriptor.Field("GetCharacterByIdAsync")
                 .ResolveWith<CharacterResolver>(q => q.GetCharacterByIdAsync(default,default,default))
+                .Argument("id",_ => _.Type<IntType>())
                 .Type<ListType<CharacterType>>()
                 .Name("AllTheCharactersMulti");
 
