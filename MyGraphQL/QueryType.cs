@@ -14,7 +14,7 @@ namespace MyGraphQL
                 .Type<ListType<CharacterType>>()
                 .Name("AllCharacters");
             descriptor.Field(_ => _.GetCharacterByIdAsync(default, default, default))
-                .Type<ListType<CharacterType>>()
+                .Type<CharacterType>()
                 .Name("CharacterDataLoader");
 
         }
