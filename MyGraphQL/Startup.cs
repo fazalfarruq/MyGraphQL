@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MyGraphQL.GraphQL.Types;
 
 namespace MyGraphQL
 {
@@ -28,7 +29,8 @@ namespace MyGraphQL
         {
             services.AddTransient<ICharacterRepo,CharacterRepo>()
                 .AddGraphQLServer()
-                .AddQueryType<QueryType>()
+                .AddQueryType(q => q.Name("Query"))
+                .AddType<QueryType>()
                 .AddType<CharacterType>()
                 .AddDataLoader<ChracterDataLoader>();
         }

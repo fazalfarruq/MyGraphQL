@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using GreenDonut;
 using HotChocolate.DataLoader;
+using MyGraphQL.Model;
 
 namespace MyGraphQL
 {

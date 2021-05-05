@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MyGraphQL.Model;
 
 namespace MyGraphQL
 {
@@ -31,6 +32,11 @@ namespace MyGraphQL
         public IEnumerable<Character> Get()
         {
             return Character;
+        }
+
+        public Character GetById(int id)
+        {
+            return Character.Find(f => f.Id == id);
         }
     }
 }

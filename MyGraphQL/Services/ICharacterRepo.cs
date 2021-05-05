@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MyGraphQL.Model;
 
 namespace MyGraphQL
 {
-    public class Character
+    public interface ICharacterRepo
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        IEnumerable<Character> Get();
+        Character GetById(int id);
     }
 }

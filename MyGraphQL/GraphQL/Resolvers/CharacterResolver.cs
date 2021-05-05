@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using HotChocolate;
 using HotChocolate.Types;
 using HotChocolate.Types.Relay;
+using MyGraphQL.Model;
 
 namespace MyGraphQL
 {
-    public class Query
+    public class CharacterResolver
     {
         public IEnumerable<Character> GetCharacters([Service] ICharacterRepo repo)
         {
