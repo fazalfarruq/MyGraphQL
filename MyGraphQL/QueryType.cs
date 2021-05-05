@@ -8,11 +8,6 @@ namespace MyGraphQL
 {
     public class QueryType : ObjectType<Query>
     {
-        //private readonly ICharacterRepo _repo;
-        //public QueryType(ICharacterRepo repo)
-        //{
-        //    _repo = repo;
-        //}
         protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
         {
             descriptor.Field(_ => _.GetCharacters(default))
