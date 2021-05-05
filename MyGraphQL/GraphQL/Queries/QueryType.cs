@@ -20,7 +20,7 @@ namespace MyGraphQL
             descriptor.Field("GetCharacterByIdAsync")
                 .ResolveWith<CharacterResolver>(q => q.GetCharacterByIdAsync(default,default,default))
                 .Argument("id",_ => _.Type<IntType>())
-                .Type<ListType<CharacterType>>()
+                .Type<CharacterType>()
                 .Name("AllTheCharactersMulti");
 
         }

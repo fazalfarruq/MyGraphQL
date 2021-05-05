@@ -18,7 +18,7 @@ namespace MyGraphQL
         }
 
 
-        public async Task<List<Character>> GetCharacterByIdAsync(
+        public async Task<Character> GetCharacterByIdAsync(
             int id,
             ChracterDataLoader dataLoader,
             CancellationToken cancellationToken)
