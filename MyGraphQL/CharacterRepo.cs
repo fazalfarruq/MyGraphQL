@@ -32,10 +32,5 @@ namespace MyGraphQL
         {
             return Character;
         }
-
-        public Character? GetById(int id)
-        {
-            return Character.Find(f => f.Id == id);
-        }
     }
 }

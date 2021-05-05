@@ -8,6 +8,5 @@ namespace MyGraphQL
     public interface ICharacterRepo
     {
         IEnumerable<Character> Get();
-        Character? GetById(int id);
     }
 }
