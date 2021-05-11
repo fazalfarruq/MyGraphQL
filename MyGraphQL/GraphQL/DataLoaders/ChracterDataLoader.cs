@@ -21,8 +21,8 @@ namespace MyGraphQL
         protected override async Task<IReadOnlyDictionary<int, Character>> LoadBatchAsync(IReadOnlyList<int> keys, CancellationToken cancellationToken)
         {
             {
-                var result = _repo.Get().ToList()
-                    .Where(g => keys.Contains(g.Id)).ToList();
+                var result = await Task.Run(() =>_repo.Get().ToList()
+                    .Where(g => keys.Contains(g.Id)).ToList());
 
                 return result.ToDictionary(r => r.Id, r => r);
 

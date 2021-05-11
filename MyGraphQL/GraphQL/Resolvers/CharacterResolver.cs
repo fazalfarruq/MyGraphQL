@@ -10,7 +10,7 @@ using MyGraphQL.Model;
 
 namespace MyGraphQL
 {
-    public class CharacterResolver
+    public record CharacterResolver
     {
         public IEnumerable<Character> GetCharacters([Service] ICharacterRepo repo)
         {

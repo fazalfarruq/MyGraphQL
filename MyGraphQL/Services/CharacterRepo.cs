@@ -8,10 +8,10 @@ namespace MyGraphQL
 {
     public class CharacterRepo : ICharacterRepo
     {
-        public List<Character> Character { get; }
+        public List<Character> Characters { get; }
         public CharacterRepo()
         {
-            Character = new List<Character>{
+            Characters = new List<Character>{
                 new Character()
                 {
                     Id = 1,
@@ -31,12 +31,12 @@ namespace MyGraphQL
         }
         public IEnumerable<Character> Get()
         {
-            return Character;
+            return Characters;
         }
 
-        public Character GetById(int id)
+        public Character? GetById(int id)
         {
-            return Character.Find(f => f.Id == id);
+            return Characters.Find(f => f.Id == id);
         }
     }
 }
